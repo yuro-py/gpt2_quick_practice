@@ -1,1 +1,1 @@
-# gpt2_quick_practice
+# Practicing manual forward passes on random small huggingface language models.
