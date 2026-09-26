@@ -4,8 +4,8 @@ Use this to convert weights of a downloaded huggingface model from safetensors t
 
 python -c "
 import json
-path = '/home/rdx/.cache/huggingface/hub/models--gpt2/blobs/248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707'
+path = '/home/rdx/.cache/huggingface/hub/models--{model name}/blobs/{full file name}'
 with open(path, 'rb') as f:
     n = int.from_bytes(f.read(8), 'little')
     print(json.dumps(json.loads(f.read(n)), indent=2))
-" > gpt2_header.json
+" > {preferable model name}.json
