@@ -11,17 +11,4 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 hf_model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.float16).to(device)
 sd = hf_model.state_dict()
-
-layers = 32
-
-vocab = F.embedding(sd.embed_tokens, 49152, 960, padding_idx=2)
-
-def attn(q,k,v,o):
-    unscaled_scores = (q @ k.transpose) / 
-
-for i in range(layers):
-    q = F.linear(vocab, model.layer.i.self_attn.q_proj.weight)
-    k = F.linear(vocab, model.layer.i.self_attn.k_proj.weight)
-    v = F.linear(vocab, model.layer.i.self_attn.v_proj.weight)
-
-
+print(sd)
